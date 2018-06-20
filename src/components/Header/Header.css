@@ -1,0 +1,22 @@
+.jumbotron {
+    text-align: center;
+    /* background-image: url("./bg.jpg"); */
+    background-color: rgb(1, 1, 71);
+}
+
+.jumboText {
+    padding: 3%;
+    color: white;
+    font-size: 40px;
+    font-family: 'Libre Baskerville', serif;
+    font-weight: bold;
+    margin-bottom: -4%;
+}
+
+.jumboSmall {
+    font-size: 24px;
+    padding-bottom: 2%;
+    color: white;
+    font-family: 'Rajdhani', sans-serif;
+
+}
