@@ -3,7 +3,7 @@ import "./Form.css";
 
 const Form = props => <div className="nytForm">{props.children}
       
-     <form role="form">
+     <form>
         <div className="form-group">
         <label for="search">Search Term: </label>
         <input type="text" className="form-control" id="search-term" size="155"></input>
