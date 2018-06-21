@@ -1,6 +1,5 @@
 .jumbotron {
     text-align: center;
-    /* background-image: url("./bg.jpg"); */
     background-color: rgb(1, 1, 71);
 }
 
@@ -18,5 +17,4 @@
     padding-bottom: 2%;
     color: white;
     font-family: 'Dosis', sans-serif;
-
 }
