@@ -43,78 +43,75 @@
     return queryURL;
     }
 
-  function updatePage(NYTData) {
-    var numArticles = $("#article-count").val();
-      for (var i = 0; i < numArticles; i++) {
-        var article = NYTData.response.docs[i];
-        var articleCount = i + 1;
-        var $articleWell = $("<article>");
-        $articleWell.addClass("well");
-        $articleWell.attr("id", "article-well-" + articleCount);
-        $("#well-section").append($articleWell);
-        var headline = article.headline;
+    function updatePage(NYTData) {
+      var numArticles = $("#article-count").val();
+        for (var i = 0; i < numArticles; i++) {
+          var article = NYTData.response.docs[i];
+          var articleCount = i + 1;
+          var $articleWell = $("<article>");
+          $articleWell.addClass("well");
+          $articleWell.attr("id", "article-well-" + articleCount);
+          $("#well-section").append($articleWell);
+          var headline = article.headline;
 
-        if (headline && headline.main) {
-          console.log(headline.main);
+          if (headline && headline.main) {
+            console.log(headline.main);
+
+            $articleWell.append(
+              "<h3 class='articleHeadline'>" +
+              "<span class='label label-primary' style='margin-left:1%;margin-top:2%;'>" + articleCount +"</span>" +
+              "<strong> " + headline.main + "</strong></h3>"
+            );
+          }
+
+          var byline = article.byline;
+
+          if (byline && byline.original) {
+            console.log(byline.original);
+
+            $articleWell.append("<h5 style='margin-left:3%;'>" + byline.original + "</h5>");
+          }
+
+          var section = article.section_name;
+          console.log(article.section_name);
+    
+          if (section) {
+            $articleWell.append("<h5 style='margin-left:3%;'>Section: " + section + "</h5>");
+          }
+
+          var pubDate = article.pub_date;
+            console.log(article.pub_date);
+    
+          if (pubDate) {
+             $articleWell.append("<h5 style='margin-left:3%;'>" + article.pub_date + "</h5>");
+          }
 
           $articleWell.append(
-            "<h3 class='articleHeadline'>" +
-            "<span class='label label-primary' style='margin-left:1%;margin-top:2%;'>" + articleCount +"</span>" +
-            "<strong> " + headline.main + "</strong></h3>"
+            "<a href='" + article.web_url + "' style='margin-left:3%;'>" + article.web_url + "</a>"
           );
+          console.log(article.web_url);
         }
-
-
-    var byline = article.byline;
-
-    if (byline && byline.original) {
-      console.log(byline.original);
-
-      $articleWell.append("<h5 style='margin-left:3%;'>" + byline.original + "</h5>");
     }
 
-    var section = article.section_name;
-    console.log(article.section_name);
-    if (section) {
-      $articleWell.append("<h5 style='margin-left:3%;'>Section: " + section + "</h5>");
+    function clear() {
+      $("#well-section").empty();
     }
 
-    var pubDate = article.pub_date;
-    console.log(article.pub_date);
-    if (pubDate) {
-      $articleWell.append("<h5 style='margin-left:3%;'>" + article.pub_date + "</h5>");
-    }
 
-    $articleWell.append(
-      "<a href='" + article.web_url + "' style='margin-left:3%;'>" + article.web_url + "</a>"
-    );
-    console.log(article.web_url);
-  }
-}
-
-function clear() {
-  $("#well-section").empty();
-}
-
-
-$("#run-search").on("click", function (event) {
-
-  event.preventDefault();
-
-  clear();
-
-  var queryURL = buildQueryURL();
-
+    $("#run-search").on("click", function (event) {
+      event.preventDefault();
+      clear();
+      var queryURL = buildQueryURL();
    
-  $.ajax({
-    url: queryURL,
-    method: "GET"
-  }).then(updatePage);
-});
+      $.ajax({
+        url: queryURL,
+        method: "GET"
+      }).then(updatePage);
+    });
 
-$("#clear-all").on("click", clear);
+    $("#clear-all").on("click", clear);
 
-});
+  });
   
   
   </script>
