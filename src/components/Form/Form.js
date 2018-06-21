@@ -1,7 +1,7 @@
 import React from "react";
 import "./Form.css";
 
-const Form = props => <div className="container-fluid">{props.children}
+const Form = props => <div className="nytForm">{props.children}
       
      <form role="form">
         <div className="form-group">

@@ -1,0 +1,15 @@
+
+.nytResults {
+    margin-top: 2%;
+}
+
+.articles {
+    text-align: center;
+    list-style: none;
+    display: inline-block;
+    margin-left: 50%;
+    margin-right: 50%;
+    
+}
+
+

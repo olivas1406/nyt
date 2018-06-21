@@ -4,6 +4,7 @@ import Header from "./components/Header"
 import Container from "./components/Container";
 import Footer from "./components/Footer";
 import Form from "./components/Form";
+import Results from "./components/Results";
 
 class App extends Component {
   render() {
@@ -12,7 +13,7 @@ class App extends Component {
         <Header></Header>
           <Container>
             <Form />
-           
+           <Results />
             </Container>
             <Footer />
       </div>
