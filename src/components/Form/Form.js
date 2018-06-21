@@ -6,7 +6,7 @@ const Form = props => <div className="nytForm">{props.children}
      <form role="form">
         <div className="form-group">
         <label for="search">Search Term:</label>
-        <input type="text" className="form-control" id="search-term"></input>
+        <input type="text" className="form-control" id="search-term" size="155"></input>
         </div>
 
         <div className="form-group">
@@ -20,13 +20,13 @@ const Form = props => <div className="nytForm">{props.children}
 
         <div className="form-group">
             <label for="start-year">Start Year (Optional):</label>
-            <input type="text" className="form-control" id="start-year"></input>
+            <input type="text" className="form-control" id="start-year" size="146"></input>
         </div>
 
         
         <div className="form-group">
             <label for="end-year">End Year (Optional):</label>
-            <input type="text" className="form-control" id="end-year"></input>
+            <input type="text" className="form-control" id="end-year" size="147"></input>
         </div>
 
     
