@@ -1,5 +1,5 @@
 const router = require("express").Router();
-const booksController = require("../../controllers/nytController");
+const nytController = require("../../controllers/nytController");
 
 router.route("/")
   .get(nytController.findAll)
