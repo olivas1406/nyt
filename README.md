@@ -5,7 +5,7 @@ New York Times Article Scraper
 </p>
 </h1>
 
-### Meet Me In The Alley is a full stack websi
+###
 
 ---
 <br>
