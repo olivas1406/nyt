@@ -1,0 +1,12 @@
+.nytSaved {
+    margin-top: 2%;
+}
+
+.savedArticles {
+    text-align: center;
+    list-style: none;
+    display: inline-block;
+    margin-left: 50%;
+    margin-right: 50%;
+
+}
